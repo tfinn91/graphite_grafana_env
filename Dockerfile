@@ -103,7 +103,7 @@ expose	8125/udp
 # Statsd Management port
 expose	8126
 
-run sudo service start collectd
+run sudo service collectd start
 
 
 VOLUME ["/var/lib/elasticsearch"]
