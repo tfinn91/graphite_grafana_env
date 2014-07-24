@@ -18,3 +18,5 @@ To run
 
 
 Modified from many different Github Dockerfiles
+
+**NOTE**: In this basic setup, the time zone is set to -0700 or America/Denver for the time settings. If installing in other location, the time zone information needs to be changed in Graphite's `local_settings.py` as well as Grafana's `config.js`.
