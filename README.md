@@ -11,8 +11,8 @@ An all-in-one image running graphite with carbon, StatsD, CollectD, and Grafana 
 
 To run
 ```
-./build
-./start
+sudo ./build
+sudo ./start
 ```
 
 
