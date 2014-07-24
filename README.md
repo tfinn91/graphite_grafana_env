@@ -1,10 +1,6 @@
 ## Graphite, Carbon, Grafana, Elasticsearch, Statsd, Collectd
 
-An all-in-one image running graphite and carbon-cache and grafana.
-
-This image contains a sensible default configuration of graphite and
-carbon-cache. Starting this container will, by default, bind the the following
-host ports:
+An all-in-one image running graphite with carbon, StatsD, CollectD, and Grafana as a front end dashboard 
 
 - `80`: the graphite web interface
 - `81`: the grafana web interface
@@ -20,4 +16,4 @@ To run
 
 
 
-Modified from https://github.com/torkerlo
+Modified from many different Github Dockerfiles
