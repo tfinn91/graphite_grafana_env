@@ -7,6 +7,7 @@ An all-in-one image running graphite with carbon, StatsD, CollectD, and Grafana 
 - `2003`: the carbon-cache line receiver (the standard graphite protocol)
 - `2004`: the carbon-cache pickle receiver
 - `7002`: the carbon-cache query port (used by the web interface)
+- `8125`: the statsd port
 
 To run
 ```
