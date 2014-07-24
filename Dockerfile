@@ -14,7 +14,7 @@ run     apt-get -y install  python-django-tagging python-simplejson python-memca
 			    python-pysqlite2 python-support python-pip gunicorn     \
 			    supervisor nginx-light nodejs git wget curl
 
-# Elastic Search
+# ELASTIC SEARCH
 
 # fake fuse
 run  apt-get install libfuse2 &&\
@@ -31,13 +31,13 @@ run    cd ~ && dpkg -i elasticsearch-1.0.1.deb && rm elasticsearch-1.0.1.deb
 run    apt-get -y install openjdk-7-jre
 
 
-# Install statsd
+# STATSD
 run	mkdir /src && git clone https://github.com/etsy/statsd.git /src/statsd
 
-# Install collectd
+# COLLECTD
 run apt-get -y install collectd collectd-utils
 
-# Install required packages
+# REQUIRED PACKAGES
 #run	pip install whisper
 #run	pip install --install-option="--prefix=/var/lib/graphite" --install-option="--install-lib=/var/lib/graphite/lib" carbon
 #run	pip install --install-option="--prefix=/var/lib/graphite" --install-option="--install-lib=/var/lib/graphite/webapp" graphite-web
@@ -50,7 +50,7 @@ run cd /usr/local/src/whisper && git checkout master && python setup.py install
 run cd /usr/local/src/carbon && git checkout 0.9.x && python setup.py install
 run cd /usr/local/src/graphite-web && git checkout 0.9.x && python check-dependencies.py; python setup.py install
 
-# statsd
+# INSTALL STATSD
 add	./statsd/config.js /src/statsd/config.js
 
 # Add graphite config
@@ -67,7 +67,7 @@ run	chmod 0775 /opt/graphite/storage /opt/graphite/storage/whisper
 run	chmod 0664 /opt/graphite/storage/graphite.db
 run	cd /opt/graphite/webapp/graphite && python manage.py syncdb --noinput
 
-# grafana
+# INSTALL GRAFANA
 run cd /tmp && wget http://grafanarel.s3.amazonaws.com/grafana-1.6.0.tar.gz &&\
 	tar xzvf grafana-1.6.0.tar.gz && rm grafana-1.6.0.tar.gz &&\
 	mv /tmp/grafana-1.6.0 /src/grafana
@@ -78,12 +78,17 @@ add ./grafana/config.js /src/grafana/config.js
 add ./fake-data-gen /src/fake-data-gen
 run cd /src/fake-data-gen && npm install
 
-# elasticsearch
+# INSTALL ELASTIC SEARCH
 add	./elasticsearch/run /usr/local/bin/run_elasticsearch
+
+# INSTALL COLLECTD
+add ./collectd/collectd.conf /src/collectd/collectd.conf
 
 # Add system service config
 add	./nginx/nginx.conf /etc/nginx/nginx.conf
 add	./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+
 # Nginx
 #
 # graphite
