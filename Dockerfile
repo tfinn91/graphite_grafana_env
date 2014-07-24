@@ -74,10 +74,6 @@ run cd /tmp && wget http://grafanarel.s3.amazonaws.com/grafana-1.6.0.tar.gz &&\
 
 add ./grafana/config.js /src/grafana/config.js
 
-# fake data generator
-add ./fake-data-gen /src/fake-data-gen
-run cd /src/fake-data-gen && npm install
-
 # INSTALL ELASTIC SEARCH
 add	./elasticsearch/run /usr/local/bin/run_elasticsearch
 
