@@ -35,7 +35,7 @@ run    apt-get -y install openjdk-7-jre
 run 	mkdir /src && git clone https://github.com/etsy/statsd.git /src/statsd
 
 # COLLECTD
-run 	apt-get -y install collectd collectd-utils /src/collectd
+run 	apt-get -y install collectd collectd-utils 
 
 # REQUIRED PACKAGES
 #run	pip install whisper
