@@ -8,6 +8,7 @@ An all-in-one image running graphite with carbon, StatsD, CollectD, and Grafana 
 - `2004`: the carbon-cache pickle receiver
 - `7002`: the carbon-cache query port (used by the web interface)
 - `8125`: the statsd port
+- `25826`: the collectd port
 
 To run
 ```
