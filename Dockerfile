@@ -35,7 +35,7 @@ run    apt-get -y install openjdk-7-jre
 run 	mkdir /src && git clone https://github.com/etsy/statsd.git /src/statsd
 
 # COLLECTD
-run apt-get update && apt-get install collectd collectd-utils
+run  apt-get install collectd collectd-utils
 
 # REQUIRED PACKAGES
 #run	pip install whisper
@@ -108,7 +108,7 @@ expose	8126
 # CollectD UDP port
 expose 25826/udp
 
-run sudo service collectd restart
+run sudo service collectd start
 
 
 VOLUME ["/var/lib/elasticsearch"]
