@@ -78,8 +78,9 @@ add ./grafana/config.js /src/grafana/config.js
 add	./elasticsearch/run /usr/local/bin/run_elasticsearch
 
 # INSTALL COLLECTD
-
 add collectd/collectd.conf /etc/collectd/
+run sudo service collectd start
+
 # Add system service config
 
 add	./nginx/nginx.conf /etc/nginx/nginx.conf
@@ -108,7 +109,7 @@ expose	8126
 # CollectD UDP port
 expose 25826/udp
 
-run sudo service collectd start
+
 
 
 VOLUME ["/var/lib/elasticsearch"]
