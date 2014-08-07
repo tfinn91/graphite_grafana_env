@@ -35,7 +35,7 @@ run    apt-get -y install openjdk-7-jre
 run 	mkdir /src && git clone https://github.com/etsy/statsd.git /src/statsd
 
 # COLLECTD
-run 	apt-get -y install collectd collectd-utils 
+RUN apt-get update && apt-get install -y python-cairo collectd libgcrypt11 python-virtualenv supervisor sudo build-essential python-dev openssh-server openssh-client && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # REQUIRED PACKAGES
 #run	pip install whisper
@@ -78,8 +78,8 @@ add ./grafana/config.js /src/grafana/config.js
 add	./elasticsearch/run /usr/local/bin/run_elasticsearch
 
 # INSTALL COLLECTD
-add ./collectd/collectd.conf /src/collectd/collectd.conf
 
+add collectd/collectd.conf /etc/collectd/
 # Add system service config
 add	./nginx/nginx.conf /etc/nginx/nginx.conf
 add	./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
