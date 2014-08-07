@@ -35,7 +35,7 @@ run    apt-get -y install openjdk-7-jre
 run 	mkdir /src && git clone https://github.com/etsy/statsd.git /src/statsd
 
 # COLLECTD
-RUN apt-get update && apt-get install -y python-cairo collectd libgcrypt11 python-virtualenv supervisor sudo build-essential python-dev openssh-server openssh-client && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+RUN sudo apt-get update && sudo apt-get install collectd collectd-utils
 
 # REQUIRED PACKAGES
 #run	pip install whisper
