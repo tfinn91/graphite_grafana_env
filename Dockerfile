@@ -79,7 +79,6 @@ add	./elasticsearch/run /usr/local/bin/run_elasticsearch
 
 # INSTALL COLLECTD
 add collectd/collectd.conf /etc/collectd/
-run sudo service collectd start
 
 # Add system service config
 
