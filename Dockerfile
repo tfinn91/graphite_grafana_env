@@ -81,6 +81,7 @@ add	./elasticsearch/run /usr/local/bin/run_elasticsearch
 
 add collectd/collectd.conf /etc/collectd/
 # Add system service config
+
 add	./nginx/nginx.conf /etc/nginx/nginx.conf
 add	./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
@@ -103,6 +104,9 @@ expose	7002
 expose	8125/udp
 # Statsd Management port
 expose	8126
+
+# CollectD UDP port
+expose 25826/udp
 
 run sudo service collectd restart
 
