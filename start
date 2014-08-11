@@ -9,7 +9,7 @@ sudo docker run -d \
 	-v /var/docker/gfdev/supervisor:/var/log/supervisor \
 	-p 8080:80 \
   -p 8081:81 \
-  -p 81265:81265 \
+  -p 25826:25826/udp \
   -p 8125:8125/udp \
   -p 2003:2003/tcp \
   --name gfdev tfinn91/graphite_grafana_env
