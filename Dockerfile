@@ -35,7 +35,7 @@ run    apt-get -y install openjdk-7-jre
 run 	mkdir /src && git clone https://github.com/etsy/statsd.git /src/statsd
 
 # COLLECTD
-run  apt-get -y install collectd collectd-utils
+
 
 # REQUIRED PACKAGES
 #run	pip install whisper
@@ -79,9 +79,6 @@ add	./elasticsearch/run /usr/local/bin/run_elasticsearch
 
 # INSTALL COLLECTD
 
-run mkdir -p /opt/collectd/etc/conf.d
-
-add collectd/collectd.conf /opt/collectd/etc
 
 # Add system service config
 
