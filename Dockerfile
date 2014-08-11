@@ -78,7 +78,10 @@ add ./grafana/config.js /src/grafana/config.js
 add	./elasticsearch/run /usr/local/bin/run_elasticsearch
 
 # INSTALL COLLECTD
-add collectd/collectd.conf /etc/collectd/
+
+run mkdir -p /opt/collectd/etc/conf.d
+
+add collectd/collectd.conf /opt/collectd/etc
 
 # Add system service config
 
