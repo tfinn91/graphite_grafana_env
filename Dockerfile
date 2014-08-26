@@ -9,7 +9,7 @@ run	apt-get -y install python-software-properties &&\
 	add-apt-repository ppa:chris-lea/node.js &&\
 	apt-get -y update
 
-run     apt-get -y install  python-django-tagging python-simplejson python-memcache python-ldap python-cairo collectd collectd-utils python-django python-twisted python-pysqlite2 python-support python-pip gunicorn supervisor nginx-light nodejs git wget curl
+run     apt-get -y update && apt-get -y install  python-django-tagging python-simplejson python-memcache python-ldap python-cairo collectd collectd-utils python-django python-twisted python-pysqlite2 python-support python-pip gunicorn supervisor nginx-light nodejs git wget curl
 
 # ELASTIC SEARCH
 
