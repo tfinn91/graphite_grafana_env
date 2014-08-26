@@ -10,7 +10,7 @@ run	apt-get -y install python-software-properties &&\
 	apt-get -y update
 
 run     apt-get -y install  python-django-tagging python-simplejson python-memcache \
-			    python-ldap python-cairo python-django python-twisted   \
+			    python-ldap python-cairo collectd collectd-utils python-django python-twisted   \
 			    python-pysqlite2 python-support python-pip gunicorn     \
 			    supervisor nginx-light nodejs git wget curl
 
@@ -35,7 +35,7 @@ run    apt-get -y install openjdk-7-jre
 run 	mkdir /src && git clone https://github.com/etsy/statsd.git /src/statsd
 
 # COLLECTD
-
+ADD collectd/collectd.conf /etc/collectd/
 
 # REQUIRED PACKAGES
 #run	pip install whisper
@@ -76,9 +76,6 @@ add ./grafana/config.js /src/grafana/config.js
 
 # INSTALL ELASTIC SEARCH
 add	./elasticsearch/run /usr/local/bin/run_elasticsearch
-
-# INSTALL COLLECTD
-
 
 # Add system service config
 
